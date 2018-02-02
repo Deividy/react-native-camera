@@ -708,7 +708,7 @@ public class RCTCameraModule extends ReactContextBaseJavaModule
         String fileName = String.format("%s", new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date()));
 
         if (type == MEDIA_TYPE_IMAGE) {
-            fileName = String.format("IMG_%s.jpg", fileName);
+            fileName = String.format("IMG_%s.gh-img", fileName);
         } else if (type == MEDIA_TYPE_VIDEO) {
             fileName = String.format("VID_%s.mp4", fileName);
         } else {
@@ -726,7 +726,7 @@ public class RCTCameraModule extends ReactContextBaseJavaModule
             File outputFile;
 
             if (type == MEDIA_TYPE_IMAGE) {
-                outputFile = File.createTempFile("IMG_" + timeStamp, ".jpg", outputDir);
+                outputFile = File.createTempFile("IMG_" + timeStamp, ".gh-img", outputDir);
             } else if (type == MEDIA_TYPE_VIDEO) {
                 outputFile = File.createTempFile("VID_" + timeStamp, ".mp4", outputDir);
             } else {

@@ -673,7 +673,7 @@ RCT_EXPORT_METHOD(hasFlash:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRej
     NSString *documentsDirectory = [paths firstObject];
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *fullPath = [[documentsDirectory stringByAppendingPathComponent:[[NSUUID UUID] UUIDString]] stringByAppendingPathExtension:@"jpg"];
+    NSString *fullPath = [[documentsDirectory stringByAppendingPathComponent:[[NSUUID UUID] UUIDString]] stringByAppendingPathExtension:@"gh-img"];
 
     [fileManager createFileAtPath:fullPath contents:imageData attributes:nil];
     responseString = fullPath;
@@ -681,7 +681,7 @@ RCT_EXPORT_METHOD(hasFlash:(RCTPromiseResolveBlock)resolve reject:(RCTPromiseRej
 
   else if (target == RCTCameraCaptureTargetTemp) {
     NSString *fileName = [[NSProcessInfo processInfo] globallyUniqueString];
-    NSString *fullPath = [NSString stringWithFormat:@"%@%@.jpg", NSTemporaryDirectory(), fileName];
+    NSString *fullPath = [NSString stringWithFormat:@"%@%@.gh-img", NSTemporaryDirectory(), fileName];
 
     [imageData writeToFile:fullPath atomically:YES];
     responseString = fullPath;
